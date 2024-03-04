@@ -2,10 +2,28 @@ package com.jetbrains.marco.photozclone.model;
 
 public class Response {
     private String tossResult;
-    private String email;
+    private String Score;
+    private String batOrBowl;
+    private String ActualToss;
     //  System.out.println(name+ " " +email)
     // getters and setters
 
+
+    public String getActualToss() {
+        return ActualToss;
+    }
+
+    public void setActualToss(String actualToss) {
+        ActualToss = actualToss;
+    }
+
+    public String getbatOrBowl() {
+        return batOrBowl;
+    }
+
+    public void setbatOrBowl(String batOrBowl) {
+        this.batOrBowl = batOrBowl;
+    }
 
     public String getTossResult() {
         return tossResult;
@@ -15,11 +33,11 @@ public class Response {
         this.tossResult = tossResult;
     }
 
-    public String getEmail() {
-        return email;
+    public String getScore() {
+        return Score;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setScore(String email) {
+        this.Score = email;
     }
 }

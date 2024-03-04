@@ -14,15 +14,33 @@
             margin: 0 10px;
             cursor: pointer;
         }
+        #response {
+            font-size: 40px; /* Adjust the font size to your preference */
+        }
+        #b {
+            font-size: 40px; /* Adjust the font size to your preference */
+        }
     </style>
 </head>
 <body>
-
+<div id="tossDisplay">
 <button onclick="TossDecision('Head')">Head</button>
 <button onclick="TossDecision('Tail')">Tail</button>
+</div>
 
+<div id="b"></div>
 
 <div id="response"></div>
+
+<div id="a" style="display:none">
+    <button onclick="playerChoice('Batting')">batting</button>
+    <button onclick="playerChoice('Bowling')">bowling</button>
+</div>
+
+
+<div id="response2"></div>
+
+
 
 <script src="script.js"></script>
 </body>
