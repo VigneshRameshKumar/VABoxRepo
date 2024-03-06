@@ -1,6 +1,7 @@
 package com.jetbrains.marco.photozclone.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.jetbrains.marco.photozclone.model.ComputerModelClass;
 import com.jetbrains.marco.photozclone.model.PlayerClass;
 import com.jetbrains.marco.photozclone.util.JsonHelperClass;
 import com.jetbrains.marco.photozclone.util.RandomClass;
@@ -10,27 +11,41 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GameService extends RandomClass {
+
     PlayerClass player=new PlayerClass("Player");
     PlayerClass computer=new PlayerClass("Computer");
     JsonHelperClass convert = new JsonHelperClass();
-    String actualTossVar;
+    ComputerModelClass comStore=new ComputerModelClass();
+    Boolean compare;
     private static final Logger logger = LoggerFactory.getLogger(GameService.class);
 
 
     public String CoinTossAction(String choice)  {
         String removeQuotesTemp=convert.removeQuotes(choice);
+        comStore.setComWonToss(false);
         int choiceInt= (removeQuotesTemp).equals("Head")?1:2;
         int computerToss=Random2();
        // logger.info("{} output of removeQuotes",removeQuotesTemp);
         logger.info("actual toss in Service is {},User value {}",computerToss,choiceInt);
-        actualTossVar=computerToss==1?"Head":"Tail";
-        return choiceInt==computerToss?"Toss won":"Lost the toss";
+        comStore.setActualToss(computerToss==1?"Head":"Tail");
+        compare=choiceInt==computerToss?true:false;
+        if(!compare){
+            comStore.setComWonToss(true);
+        }
+        return compare?"Toss won":"Lost the toss";
 
     }
     public String ActualTossSer(){
-        logger.info("Value of actual toss in Service is {}",actualTossVar);
-        return actualTossVar;
+        logger.info("Value of actual toss in Service is {}",comStore.getActualToss());
+        return comStore.getActualToss();
     }
+    public  boolean doesComputerWonToss(){
+        return comStore.isComWonToss();
+    }
+    public String computerChooseBatorBowl(){
+        return Random2()==1?"Batting":"Bowling";
+    }
+
     public String playChoosingAction(String playerChoice) {
 
         String removeQuotesTemp=convert.removeQuotes(playerChoice);

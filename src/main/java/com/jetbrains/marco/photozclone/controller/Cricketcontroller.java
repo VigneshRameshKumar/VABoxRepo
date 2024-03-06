@@ -26,6 +26,8 @@ public class Cricketcontroller {
 
         result.setTossResult(tossServ.CoinTossAction(toss));
         result.setActualToss(tossServ.ActualTossSer());
+        result.setComWonTossFlag(tossServ.doesComputerWonToss());
+        result.setComputerChoiceVar(tossServ.computerChooseBatorBowl());
         logger.info("Value of actual toss in controller is {}",result.getActualToss());
         return result;
 
@@ -36,6 +38,5 @@ public class Cricketcontroller {
         data=result.getbatOrBowl();
         return result;
     }
-
 
 }

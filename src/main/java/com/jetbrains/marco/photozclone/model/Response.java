@@ -5,7 +5,25 @@ public class Response {
     private String Score;
     private String batOrBowl;
     private String ActualToss;
-    //  System.out.println(name+ " " +email)
+    private  boolean comWonTossFlag;
+    private String computerChoiceVar;
+
+    public String getComputerChoiceVar() {
+        return computerChoiceVar;
+    }
+
+    public void setComputerChoiceVar(String computerChoiceVar) {
+        this.computerChoiceVar = computerChoiceVar;
+    }
+
+    public boolean isComWonTossFlag() {
+        return comWonTossFlag;
+    }
+
+    public void setComWonTossFlag(boolean comWonTossFlag) {
+        this.comWonTossFlag = comWonTossFlag;
+    }
+//  System.out.println(name+ " " +email)
     // getters and setters
 
 

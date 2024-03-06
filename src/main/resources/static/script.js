@@ -18,8 +18,9 @@ function TossDecision(toss) {
     .then(result => {
         document.getElementById("b").innerText=result.actualToss;
         document.getElementById("response").innerText = result.tossResult;
-
-
+        if(result.comWonTossFlag){
+        document.getElementById("response3").innerText=result.computerChoiceVar;
+        }
         if(result.tossResult==='Toss won'){
         a_Container.style.display = 'block';
         }
@@ -36,17 +37,18 @@ function TossDecision(toss) {
 
 }
 function playerChoice(batString){
-var batStringWithoutQuote=batString.replace(/"/g, '');
+
     fetch('/playerChoosingEndpoint', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(batStringWithoutQuote),
+        body: JSON.stringify(batString),
     })
     .then(response => response.json())
     .then(result => {
     document.getElementById("response2").innerText =result.batOrBowl;
+
     })
     .catch(error => {
             console.error('Error:', error);
