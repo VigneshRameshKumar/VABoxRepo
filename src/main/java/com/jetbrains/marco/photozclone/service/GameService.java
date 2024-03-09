@@ -7,17 +7,19 @@ import com.jetbrains.marco.photozclone.util.JsonHelperClass;
 import com.jetbrains.marco.photozclone.util.RandomClass;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 @Service
+@Primary
 public class GameService extends RandomClass {
 
-    PlayerClass player=new PlayerClass("Player");
-    PlayerClass computer=new PlayerClass("Computer");
+    static PlayerClass player=new PlayerClass("Player");
+    static PlayerClass computer=new PlayerClass("Computer");
     JsonHelperClass convert = new JsonHelperClass();
     ComputerModelClass comStore=new ComputerModelClass();
     Boolean compare;
-    private static final Logger logger = LoggerFactory.getLogger(GameService.class);
+    public static final Logger logger = LoggerFactory.getLogger(GameService.class);
 
 
     public String CoinTossAction(String choice)  {
@@ -26,24 +28,29 @@ public class GameService extends RandomClass {
         int choiceInt= (removeQuotesTemp).equals("Head")?1:2;
         int computerToss=Random2();
        // logger.info("{} output of removeQuotes",removeQuotesTemp);
-        logger.info("actual toss in Service is {},User value {}",computerToss,choiceInt);
+       // logger.info("actual toss in Service is {},User value {}",computerToss,choiceInt);
         comStore.setActualToss(computerToss==1?"Head":"Tail");
         compare=choiceInt==computerToss?true:false;
         if(!compare){
             comStore.setComWonToss(true);
         }
+
+        convert.delayInSeconds(1);
         return compare?"Toss won":"Lost the toss";
 
     }
     public String ActualTossSer(){
-        logger.info("Value of actual toss in Service is {}",comStore.getActualToss());
+       // logger.info("Value of actual toss in Service is {}",comStore.getActualToss());
         return comStore.getActualToss();
     }
     public  boolean doesComputerWonToss(){
         return comStore.isComWonToss();
     }
     public String computerChooseBatorBowl(){
-        return Random2()==1?"Batting":"Bowling";
+        String computerChoiceTempVar = Random2()==1?"Batting":"Bowling";
+        computer.setBatting(computerChoiceTempVar.equals("Batting")?"first":"second");
+        player.setBatting(computer.getBatting().equals("first")?"second":"first");
+        return computerChoiceTempVar;
     }
 
     public String playChoosingAction(String playerChoice) {
@@ -51,6 +58,7 @@ public class GameService extends RandomClass {
         String removeQuotesTemp=convert.removeQuotes(playerChoice);
 
         player.setBatting("Batting".equals(removeQuotesTemp)?"first":"second");
+        computer.setBatting(player.getBatting().equals("first")?"second":"first");
         return player.getBatting();
     }
 

@@ -23,6 +23,19 @@
         #response3 {
             font-size: 40px; /* Adjust the font size to your preference */
         }
+        #button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+            text-align: center;
+        }
+
+        #button-container button {
+            width: 100px;
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +58,19 @@
 
 <div id="response3"></div>
 
-<script src="script.js"></script>
+<div id="button-container" style="display:none">
+<button id="button1" onclick="sendValueToEndpoint(1)">Button 1</button>
+<button id="button2" onclick="sendValueToEndpoint(2)">Button 2</button>
+<button id="button3" onclick="sendValueToEndpoint(3)">Button 3</button>
+<button id="button4" onclick="sendValueToEndpoint(4)">Button 4</button>
+<button id="button5" onclick="sendValueToEndpoint(5)">Button 5</button>
+<button id="button6" onclick="sendValueToEndpoint(6)">Button 6</button>
+</div>
+
+<div id="response4"></div>
+
+<div id="response5"></div>
+
+<script src="script_1.js"></script>
 </body>
 </html>

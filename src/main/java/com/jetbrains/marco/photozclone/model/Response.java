@@ -8,6 +8,44 @@ public class Response {
     private  boolean comWonTossFlag;
     private String computerChoiceVar;
 
+
+
+    private int coumputerGuessVar;
+    private  int currentTotalVar;
+    private boolean matchOverVar;
+    private  String matchResult;
+
+    public boolean isMatchOverVar() {
+        return matchOverVar;
+    }
+
+    public void setMatchOverVar(boolean matchOverVar) {
+        this.matchOverVar = matchOverVar;
+    }
+    public int getCoumputerGuessVar() {
+        return coumputerGuessVar;
+    }
+
+    public void setCoumputerGuessVar(int coumputerGuessVar) {
+        this.coumputerGuessVar = coumputerGuessVar;
+    }
+
+    public int getCurrentTotalVar() {
+        return currentTotalVar;
+    }
+
+    public void setCurrentTotalVar(int currentTotalVar) {
+        this.currentTotalVar = currentTotalVar;
+    }
+
+    public String getMatchResult() {
+        return matchResult;
+    }
+
+    public void setMatchResult(String matchResult) {
+        this.matchResult = matchResult;
+    }
+
     public String getComputerChoiceVar() {
         return computerChoiceVar;
     }

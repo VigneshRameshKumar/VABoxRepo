@@ -1,8 +1,8 @@
 package com.jetbrains.marco.photozclone.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jetbrains.marco.photozclone.model.Response;
 import com.jetbrains.marco.photozclone.service.GameService;
+import com.jetbrains.marco.photozclone.service.SecondPhaseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.*;
 public class Cricketcontroller {
     @Autowired
     private final GameService tossServ;
+    private final SecondPhaseService matchServ;
     private static final Logger logger = LoggerFactory.getLogger(Cricketcontroller.class);
     Response result=new Response();
     String data;
-    public Cricketcontroller(GameService tossServ) {
+    public Cricketcontroller(GameService tossServ, SecondPhaseService matchServ) {
         this.tossServ = tossServ;
+        this.matchServ = matchServ;
     }
 
     @PostMapping("/toss")
@@ -38,5 +40,13 @@ public class Cricketcontroller {
         data=result.getbatOrBowl();
         return result;
     }
-
+    @PostMapping("/getPlayerInputEndpoint")
+    public Response tempName(@RequestBody String value){
+        logger.info("Value passed to service is {}",value);
+        matchServ.valuePressedByPlayer(value);
+        result.setCoumputerGuessVar(matchServ.compGuess);
+        result.setCurrentTotalVar(matchServ.total);
+        result.setMatchOverVar(matchServ.isMatchOver);
+        return result;
+    }
 }
