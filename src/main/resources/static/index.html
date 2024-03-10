@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,12 +30,17 @@
             text-align: center;
         }
 
-        #button-container button {
-            width: 100px;
-            padding: 10px;
-            margin: 5px;
-            font-size: 16px;
+        #button-container {
+          padding: 0 35%  ;
         }
+       .main{
+          display: flex;
+         flex-direction: row;
+       }
+      .handimg{
+        padding:10px
+      }
+
     </style>
 </head>
 <body>
@@ -59,13 +64,22 @@
 <div id="response3"></div>
 
 <div id="button-container" style="display:none">
-<button id="button1" onclick="sendValueToEndpoint(1)">Button 1</button>
-<button id="button2" onclick="sendValueToEndpoint(2)">Button 2</button>
-<button id="button3" onclick="sendValueToEndpoint(3)">Button 3</button>
-<button id="button4" onclick="sendValueToEndpoint(4)">Button 4</button>
-<button id="button5" onclick="sendValueToEndpoint(5)">Button 5</button>
-<button id="button6" onclick="sendValueToEndpoint(6)">Button 6</button>
-</div>
+    <!--
+<button class="button1" >1</button>
+<button class="button1" onclick="sendValueToEndpoint(2)">2</button>
+<button class="button1" onclick="sendValueToEndpoint(3)">3</button>
+<button class="button1" onclick="sendValueToEndpoint(4)">4</button>
+<button class="button1" onclick="sendValueToEndpoint(5)">5</button>
+<button class="button1" onclick="sendValueToEndpoint(6)">6</button> -->
+    <div class="main">
+   <div class="handimg"> <img src="/images/hand cricket1.jpg" alt="" srcset=""  width="42" height="45" onclick="sendValueToEndpoint(1)"> </div>
+    <div class="handimg"><img src="/images/handcricket2.jpg" alt="" srcset=""  width="42" height="45" onclick="sendValueToEndpoint(2)"> </div>
+    <div class="handimg"><img src="/images/hand cricket3.jpg" alt="" srcset=""  width="42" height="45" onclick="sendValueToEndpoint(3)"> </div> <br>
+    <div class="handimg"> <img src="/images/hand cricket4.jpg" alt="" srcset=""  width="42" height="45" onclick="sendValueToEndpoint(4)"> </div>
+    <div class="handimg"> <img src="/images/hand cricket5.jpg" alt="" srcset=""  width="42" height="45" onclick="sendValueToEndpoint(5)"> </div>
+    <div class="handimg"> <img src="/images/hand cricket6.jpg" alt="" srcset=""  width="42" height="45" onclick="sendValueToEndpoint(6)"> </div>
+    </div>
+    </div>
 
 <div id="response4"></div>
 
