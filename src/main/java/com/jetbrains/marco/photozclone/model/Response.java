@@ -13,7 +13,7 @@ public class Response {
     private int coumputerGuessVar;
     private  int currentTotalVar;
     private boolean matchOverVar;
-    private  String matchResult;
+    private  String matchResult=null;
 
     public boolean isMatchOverVar() {
         return matchOverVar;

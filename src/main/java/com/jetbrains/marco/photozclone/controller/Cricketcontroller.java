@@ -47,6 +47,10 @@ public class Cricketcontroller {
         result.setCoumputerGuessVar(matchServ.compGuess);
         result.setCurrentTotalVar(matchServ.total);
         result.setMatchOverVar(matchServ.MatchOver);
+        if(matchServ.MatchOver){
+            logger.info("match over condition{}",result.getActualToss());
+            result.setMatchResult(matchServ.MatchDecision());
+        }
         return result;
     }
 }

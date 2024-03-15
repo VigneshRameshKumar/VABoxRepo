@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 @Service
-@Primary
+//@Primary
 public class GameService extends RandomClass {
 
     static PlayerClass player=new PlayerClass("Player");
@@ -20,6 +20,7 @@ public class GameService extends RandomClass {
     ComputerModelClass comStore=new ComputerModelClass();
     Boolean compare;
     public static final Logger logger = LoggerFactory.getLogger(GameService.class);
+
 
 
     public String CoinTossAction(String choice)  {

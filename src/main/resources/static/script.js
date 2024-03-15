@@ -3,7 +3,7 @@ var button_Container= document.getElementById('button-container');
 
 
 function TossDecision(toss) {
-console.log("Hi")
+console.log("Hello there");
     // Basic validation
     if (toss.trim() === '' ) {
         alert('Please fill in all fields.');
@@ -80,7 +80,10 @@ console.log("send");
     document.getElementById("response5").innerText ="OUT";
     }
     else{
-    document.getElementById("response5").innerText = result. currentTotalVar;
+    document.getElementById("response5").innerText = result.currentTotalVar;
+    }
+    if(result.matchOverVar){
+    document.getElementById("response6").innerText = result.matchResult;
     }
     })
     .catch(error => {
