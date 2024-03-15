@@ -58,7 +58,7 @@ function playerChoice(batString){
     })
     .then(response => response.json())
     .then(result => {
-    document.getElementById("response2").innerText =result.batOrBowl;
+    document.getElementById("response2").innerText =(result.batOrBowl ==='first'?"Player choose to Bat first":"Player choose to Bowl first");  // for debugging output (first or second)
     button_Container.style.display='block';
     })
     .catch(error => {
@@ -80,16 +80,18 @@ console.log("send");
     })
     .then(response => response.json())
     .then(result => {
-    document.getElementById("response4").innerText =result.coumputerGuessVar;
+    document.getElementById("response4").innerText ="comp puts : " + result.coumputerGuessVar;
     if(result.coumputerGuessVar==userInputNumber){
     document.getElementById("response5").innerText ="OUT";
     document.getElementById("target").innerText = result.targetScoreVar;
     }
     else{
-    document.getElementById("response5").innerText =result.currentTotalVar;
+    document.getElementById("response5").innerText ="Score : " + result.currentTotalVar;
     }
     if(result.matchOverVar){
     document.getElementById("response6").innerText = result.matchResult;
+    document.getElementById("response7").innerText = "Player score : " + result.playerScore;
+    document.getElementById("response8").innerText = "Computer score : " + result.computerScore;
     }
     })
     .catch(error => {

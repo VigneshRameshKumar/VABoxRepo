@@ -78,6 +78,8 @@ public class SecondPhaseService extends RandomClass {
 
         return matchResult;
     }
+
+
 public void resetGlobalSecondSer(){
     isSecondBatting=false;
     MatchOver =false;
@@ -85,7 +87,6 @@ public void resetGlobalSecondSer(){
     compGuess=0;
     target=0;
     currentBatting=null;
-
-}
+    }
 
 }

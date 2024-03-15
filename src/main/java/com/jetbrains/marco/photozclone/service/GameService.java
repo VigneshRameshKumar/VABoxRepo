@@ -48,7 +48,7 @@ public class GameService extends RandomClass {
         return comStore.isComWonToss();
     }
     public String computerChooseBatorBowl(){
-        String computerChoiceTempVar = Random2()==1?"Batting":"Bowling";
+        String computerChoiceTempVar = Random2()==1?"Computer choose to Bat first":"Computer choose to Bowl first";
         computer.setBatting(computerChoiceTempVar.equals("Batting")?"first":"second");
         player.setBatting(computer.getBatting().equals("first")?"second":"first");
         return computerChoiceTempVar;
@@ -62,7 +62,12 @@ public class GameService extends RandomClass {
         computer.setBatting(player.getBatting().equals("first")?"second":"first");
         return player.getBatting();
     }
-
+    public int getPlayerScore(){
+        return player.getScore();
+    }
+    public int getComputerScore(){
+        return computer.getScore();
+    }
     public void resetGlobalToss(){
         player=new PlayerClass("Player");
         computer=new PlayerClass("Computer");

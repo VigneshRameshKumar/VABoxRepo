@@ -54,6 +54,8 @@ public class Cricketcontroller {
         if(matchServ.MatchOver){
             logger.info("match over condition{}",result.getActualToss());
             result.setMatchResult(matchServ.MatchDecision());
+            result.playerScore= tossServ.getPlayerScore();
+            result.computerScore= tossServ.getComputerScore();
         }
         return result;
     }

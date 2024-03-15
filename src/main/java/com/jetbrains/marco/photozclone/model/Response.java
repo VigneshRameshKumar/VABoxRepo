@@ -16,6 +16,9 @@ public class Response {
     private  String matchResult=null;
     private int targetScoreVar;
 
+    public int playerScore;
+    public int computerScore;
+
     public int getTargetScoreVar() {
         return targetScoreVar;
     }
