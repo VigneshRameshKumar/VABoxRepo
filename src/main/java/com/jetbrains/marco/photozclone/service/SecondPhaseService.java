@@ -3,7 +3,6 @@ package com.jetbrains.marco.photozclone.service;
 import com.jetbrains.marco.photozclone.model.PlayerClass;
 import com.jetbrains.marco.photozclone.util.JsonHelperClass;
 import com.jetbrains.marco.photozclone.util.RandomClass;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,7 +13,7 @@ public class SecondPhaseService extends RandomClass {
     public boolean MatchOver =false;
     public int total=0;
     public int compGuess=0;
-    int target=0;
+    public int target=0;
     PlayerClass currentBatting=null;
     JsonHelperClass convert = new JsonHelperClass();
 
@@ -79,6 +78,14 @@ public class SecondPhaseService extends RandomClass {
 
         return matchResult;
     }
+public void resetGlobalSecondSer(){
+    isSecondBatting=false;
+    MatchOver =false;
+    total=0;
+    compGuess=0;
+    target=0;
+    currentBatting=null;
 
+}
 
 }

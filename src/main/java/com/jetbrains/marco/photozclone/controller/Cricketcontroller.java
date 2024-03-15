@@ -46,11 +46,21 @@ public class Cricketcontroller {
         matchServ.valuePressedByPlayer(value);
         result.setCoumputerGuessVar(matchServ.compGuess);
         result.setCurrentTotalVar(matchServ.total);
+        if(matchServ.compGuess==Integer.parseInt(value)){
+            result.setTargetScoreVar(matchServ.target);
+        }
         result.setMatchOverVar(matchServ.MatchOver);
+
         if(matchServ.MatchOver){
             logger.info("match over condition{}",result.getActualToss());
             result.setMatchResult(matchServ.MatchDecision());
         }
         return result;
+    }
+
+    @PostMapping("/resetGlobalObject")
+    public void resetGlobalObject() {
+        tossServ.resetGlobalToss();
+        matchServ.resetGlobalSecondSer();
     }
 }

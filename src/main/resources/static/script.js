@@ -3,7 +3,7 @@ var button_Container= document.getElementById('button-container');
 
 
 function TossDecision(toss) {
-console.log("Hello there");
+console.log("Hello");
     // Basic validation
     if (toss.trim() === '' ) {
         alert('Please fill in all fields.');
@@ -45,6 +45,8 @@ console.log("Hello there");
     });
 
 }
+
+
 function playerChoice(batString){
 
     fetch('/playerChoosingEndpoint', {
@@ -64,6 +66,9 @@ function playerChoice(batString){
             document.getElementById("response2").innerText = 'An error occurred.';
         });
 }
+
+
+
 function sendValueToEndpoint(userInputNumber){
 console.log("send");
     fetch('/getPlayerInputEndpoint', {
@@ -78,9 +83,10 @@ console.log("send");
     document.getElementById("response4").innerText =result.coumputerGuessVar;
     if(result.coumputerGuessVar==userInputNumber){
     document.getElementById("response5").innerText ="OUT";
+    document.getElementById("target").innerText = result.targetScoreVar;
     }
     else{
-    document.getElementById("response5").innerText = result.currentTotalVar;
+    document.getElementById("response5").innerText =result.currentTotalVar;
     }
     if(result.matchOverVar){
     document.getElementById("response6").innerText = result.matchResult;
@@ -92,3 +98,24 @@ console.log("send");
         });
 }
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+            // Detect page reload or navigation
+            window.addEventListener('beforeunload', function () {
+                // Send fetch request to reset global object
+                fetch('/resetGlobalObject', {
+                    method: 'POST'
+                })
+                .then(function (response) {
+                    if (response.ok) {
+                        console.log('Global object reset successfully');
+                    } else {
+                        console.error('Error resetting global object');
+                    }
+                })
+                .catch(function (error) {
+                    console.error('Error resetting global object:', error);
+                });
+            });
+        });

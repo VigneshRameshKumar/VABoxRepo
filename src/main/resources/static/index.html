@@ -40,13 +40,22 @@
       .handimg{
         padding:10px
       }
-
+      #target{
+      position: fixed;
+      top: 50px; /* Adjust as needed */
+      right: 75px; /* Adjust as needed */
+      background-color: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
     </style>
 </head>
 <body>
+<div id="target"></div>
 <div id="tossDisplay">
 <button onclick="TossDecision('Head')">Head</button>
 <button onclick="TossDecision('Tail')">Tail</button>
+
 </div>
 
 <div id="b"></div>

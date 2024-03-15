@@ -14,6 +14,15 @@ public class Response {
     private  int currentTotalVar;
     private boolean matchOverVar;
     private  String matchResult=null;
+    private int targetScoreVar;
+
+    public int getTargetScoreVar() {
+        return targetScoreVar;
+    }
+
+    public void setTargetScoreVar(int targetScoreVar) {
+        this.targetScoreVar = targetScoreVar;
+    }
 
     public boolean isMatchOverVar() {
         return matchOverVar;

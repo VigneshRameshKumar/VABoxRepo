@@ -1,13 +1,13 @@
 package com.jetbrains.marco.photozclone.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+
 import com.jetbrains.marco.photozclone.model.ComputerModelClass;
 import com.jetbrains.marco.photozclone.model.PlayerClass;
 import com.jetbrains.marco.photozclone.util.JsonHelperClass;
 import com.jetbrains.marco.photozclone.util.RandomClass;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Primary;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -61,6 +61,11 @@ public class GameService extends RandomClass {
         player.setBatting("Batting".equals(removeQuotesTemp)?"first":"second");
         computer.setBatting(player.getBatting().equals("first")?"second":"first");
         return player.getBatting();
+    }
+
+    public void resetGlobalToss(){
+        player=new PlayerClass("Player");
+        computer=new PlayerClass("Computer");
     }
 
 }

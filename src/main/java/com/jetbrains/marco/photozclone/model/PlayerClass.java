@@ -4,11 +4,7 @@ public class PlayerClass {
     private String batting;
     private  int score;
     public String name;
-    String tossDec;
 
-    PlayerClass(){
-
-    }
     public PlayerClass(String name){
         this.name=name;
     }
