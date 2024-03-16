@@ -1,8 +1,8 @@
-package com.jetbrains.marco.photozclone.controller;
+package com.springBoot.VABox.HandCricket.controller;
 
-import com.jetbrains.marco.photozclone.model.Response;
-import com.jetbrains.marco.photozclone.service.GameService;
-import com.jetbrains.marco.photozclone.service.SecondPhaseService;
+import com.springBoot.VABox.HandCricket.model.Response;
+import com.springBoot.VABox.HandCricket.service.GameService;
+import com.springBoot.VABox.HandCricket.service.SecondPhaseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

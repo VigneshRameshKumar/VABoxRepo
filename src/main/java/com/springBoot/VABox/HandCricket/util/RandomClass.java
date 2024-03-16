@@ -1,4 +1,4 @@
-package com.jetbrains.marco.photozclone.util;
+package com.springBoot.VABox.HandCricket.util;
 
 import java.util.Random;
 

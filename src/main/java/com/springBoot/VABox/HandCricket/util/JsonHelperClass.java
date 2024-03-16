@@ -1,4 +1,4 @@
-package com.jetbrains.marco.photozclone.util;
+package com.springBoot.VABox.HandCricket.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

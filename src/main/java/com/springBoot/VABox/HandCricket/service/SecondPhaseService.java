@@ -1,8 +1,8 @@
-package com.jetbrains.marco.photozclone.service;
+package com.springBoot.VABox.HandCricket.service;
 
-import com.jetbrains.marco.photozclone.model.PlayerClass;
-import com.jetbrains.marco.photozclone.util.JsonHelperClass;
-import com.jetbrains.marco.photozclone.util.RandomClass;
+import com.springBoot.VABox.HandCricket.model.PlayerClass;
+import com.springBoot.VABox.HandCricket.util.JsonHelperClass;
+import com.springBoot.VABox.HandCricket.util.RandomClass;
 import org.springframework.stereotype.Service;
 
 @Service

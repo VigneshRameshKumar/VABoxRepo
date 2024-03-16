@@ -1,4 +1,4 @@
-package com.jetbrains.marco.photozclone.model;
+package com.springBoot.VABox.HandCricket.model;
 
 public class Response {
     private String tossResult;

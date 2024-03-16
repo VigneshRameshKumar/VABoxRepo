@@ -1,10 +1,10 @@
-package com.jetbrains.marco.photozclone;
+package com.springBoot.VABox.HandCricket;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PhotozCloneApplicationTests {
+class handCricketApplicationTests {
 
 	@Test
 	void contextLoads() {
