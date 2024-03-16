@@ -47,7 +47,7 @@ public class SecondPhaseService extends RandomClass {
 
         if (guess != compGuess ) {
             total += obj.name.equals("Player") ? guess : compGuess;
-
+            obj.setScore(total);
             if (isSecondBatting && total > target) {
                 GameService.logger.info("Reached Target");
                 obj.setScore(total);

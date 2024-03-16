@@ -50,12 +50,11 @@ public class Cricketcontroller {
             result.setTargetScoreVar(matchServ.target);
         }
         result.setMatchOverVar(matchServ.MatchOver);
-
+        result.playerScore= tossServ.getPlayerScore();
+        result.computerScore= tossServ.getComputerScore();
         if(matchServ.MatchOver){
             logger.info("match over condition{}",result.getActualToss());
             result.setMatchResult(matchServ.MatchDecision());
-            result.playerScore= tossServ.getPlayerScore();
-            result.computerScore= tossServ.getComputerScore();
         }
         return result;
     }

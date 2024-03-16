@@ -3,7 +3,7 @@ var button_Container= document.getElementById('button-container');
 
 
 function TossDecision(toss) {
-console.log("Hello");
+console.log("Hi");
     // Basic validation
     if (toss.trim() === '' ) {
         alert('Please fill in all fields.');
@@ -81,6 +81,8 @@ console.log("send");
     .then(response => response.json())
     .then(result => {
     document.getElementById("response4").innerText ="comp puts : " + result.coumputerGuessVar;
+    document.getElementById("response7").innerText = "Player score : " + result.playerScore;
+    document.getElementById("response8").innerText = "Computer score : " + result.computerScore;
     if(result.coumputerGuessVar==userInputNumber){
     document.getElementById("response5").innerText ="OUT";
     document.getElementById("target").innerText = result.targetScoreVar;
@@ -90,8 +92,7 @@ console.log("send");
     }
     if(result.matchOverVar){
     document.getElementById("response6").innerText = result.matchResult;
-    document.getElementById("response7").innerText = "Player score : " + result.playerScore;
-    document.getElementById("response8").innerText = "Computer score : " + result.computerScore;
+
     }
     })
     .catch(error => {

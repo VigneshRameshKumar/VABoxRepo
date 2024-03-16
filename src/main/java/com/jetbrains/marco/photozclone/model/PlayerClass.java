@@ -2,7 +2,7 @@ package com.jetbrains.marco.photozclone.model;
 
 public class PlayerClass {
     private String batting;
-    private  int score;
+    private  int score=0;
     public String name;
 
     public PlayerClass(String name){
