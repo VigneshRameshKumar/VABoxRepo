@@ -13,9 +13,11 @@ public class Cricketcontroller {
     @Autowired
     private final GameService tossServ;
     private final SecondPhaseService matchServ;
+
     private static final Logger logger = LoggerFactory.getLogger(Cricketcontroller.class);
     Response result=new Response();
     String data;
+
     public Cricketcontroller(GameService tossServ, SecondPhaseService matchServ) {
         this.tossServ = tossServ;
         this.matchServ = matchServ;
@@ -23,8 +25,6 @@ public class Cricketcontroller {
 
     @PostMapping("/toss")
     public Response printTossResult(@RequestBody String toss)  {
-        // Process form data (you can save it to a database, perform some logic, etc.)
-        // For simplicity, we'll just echo back a response.
 
         result.setTossResult(tossServ.CoinTossAction(toss));
         result.setActualToss(tossServ.ActualTossSer());
